@@ -28,6 +28,19 @@ class TodoHelpers {
     return updatedTasks;
   }
 
+  static UpdateTaskEntry(existingTasks, taskID, description) {
+    const updatedTasks = [];
+
+    existingTasks.forEach((task) => {
+      updatedTasks.push({
+        ...task,
+        description: task.index === taskID ? description : task.description,
+      });
+    });
+
+    return updatedTasks;
+  }
+
   static UpdateTaskStore = (tasks) => {
     localStorage.setItem('tasks', JSON.stringify(tasks));
   };
@@ -49,7 +62,7 @@ class TodoHelpers {
         tasksListHTML += `<li class="list-item" id="item-${item.index}">
         <div class="left">
           <input type="checkbox" ${item.completed ? 'checked' : ''}/>
-          <p class="description">${item.description}</p>
+          <p class="description" id="description-${item.index}">${item.description}</p>
         </div>
         <div class="right">
           <button class="action-button" id="edit-${item.index}" type="button">

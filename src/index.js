@@ -1,5 +1,7 @@
 // import './index.css';
-import { SetupTasks, AddTask, DeleteTask } from './modules/todoManager.js';
+import {
+  SetupTasks, AddTask, DeleteTask, CaptureEditableDescription,
+} from './modules/todoManager.js';
 
 SetupTasks();
 
@@ -14,5 +16,11 @@ document.body.addEventListener('click', (event) => {
     const eventTargetIDArray = event.target.id.split('-');
     const taskID = parseInt(eventTargetIDArray[eventTargetIDArray.length - 1], 10);
     DeleteTask(taskID);
+  }
+
+  if (event.target.id.includes('edit-')) {
+    const eventTargetIDArray = event.target.id.split('-');
+    const taskID = parseInt(eventTargetIDArray[eventTargetIDArray.length - 1], 10);
+    CaptureEditableDescription(taskID);
   }
 });
