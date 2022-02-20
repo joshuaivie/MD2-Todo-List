@@ -10,4 +10,13 @@ const CaptureCheck = (id, state) => {
   TodoHelpers.RenderTasks(updatedTaskList, TasksContainer);
 };
 
-export { CaptureCheck };
+const ClearAllCompleted = () => {
+  const currentTaskList = TodoHelpers.RetrieveTasks();
+  let updatedTaskList = [];
+
+  updatedTaskList = TodoHelpers.UpdateClearedTasks(currentTaskList);
+  TodoHelpers.UpdateTaskStore(updatedTaskList);
+  TodoHelpers.RenderTasks(updatedTaskList, TasksContainer);
+};
+
+export { CaptureCheck, ClearAllCompleted };

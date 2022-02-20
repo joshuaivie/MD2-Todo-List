@@ -1,6 +1,5 @@
 class TodoHelpers {
   static CreateTaskEntry(existingTasks, taskDescription) {
-    const id = existingTasks.length === 0 ? 0 : existingTasks.length;
     const updatedTasks = existingTasks;
 
     updatedTasks.push({
@@ -48,6 +47,19 @@ class TodoHelpers {
       updatedTasks.push({
         ...task,
         completed: task.index === taskID ? taskState : task.completed,
+      });
+    });
+
+    return updatedTasks;
+  }
+
+  static UpdateClearedTasks(existingTasks) {
+    const updatedTasks = [];
+
+    existingTasks.forEach((task) => {
+      updatedTasks.push({
+        ...task,
+        cleared: task.completed,
       });
     });
 
