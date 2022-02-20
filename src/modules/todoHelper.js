@@ -13,6 +13,21 @@ class TodoHelpers {
     return updatedTasks;
   }
 
+  static DeleteTaskEntry(existingTasks, taskID) {
+    const updatedTasks = [];
+
+    existingTasks.forEach((task) => {
+      if (task.index !== taskID) {
+        updatedTasks.push({
+          ...task,
+          index: updatedTasks.length,
+        });
+      }
+    });
+
+    return updatedTasks;
+  }
+
   static UpdateTaskStore = (tasks) => {
     localStorage.setItem('tasks', JSON.stringify(tasks));
   };
@@ -37,13 +52,18 @@ class TodoHelpers {
           <p class="description">${item.description}</p>
         </div>
         <div class="right">
-          <button class="more-options">
-            <i class="fa-solid fa-ellipsis-vertical"></i>
+          <button class="action-button" id="edit-${item.index}" type="button">
+            <i class="fa-solid fa-pen-to-square button-icon"></i>
+          </button> 
+          <button class="action-button" id="delete-${item.index}" type="button">
+            <i class="fa-solid fa-trash-can button-icon"></i>
           </button>           
         </div>
       </li>`;
       });
       tasksContainer.innerHTML = tasksListHTML;
+    } else {
+      tasksContainer.innerHTML = '';
     }
   };
 }

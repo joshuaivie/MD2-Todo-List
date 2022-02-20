@@ -15,9 +15,19 @@ const AddTask = () => {
     updatedTaskList = TodoHelpers.CreateTaskEntry(currentTaskList, taskDescription);
     TodoHelpers.UpdateTaskStore(updatedTaskList);
     TodoHelpers.RenderTasks(updatedTaskList, TasksContainer);
-    console.log(updatedTaskList);
     InputBox.value = '';
   }
 };
 
-export { SetupTasks, AddTask}
+const DeleteTask = (id) => {
+  const currentTaskList = TodoHelpers.RetrieveTasks();
+  let updatedTaskList = [];
+  console.log(currentTaskList);
+
+  updatedTaskList = TodoHelpers.DeleteTaskEntry(currentTaskList, id);
+  console.log(updatedTaskList)
+  TodoHelpers.UpdateTaskStore(updatedTaskList);
+  TodoHelpers.RenderTasks(updatedTaskList, TasksContainer);
+};
+
+export { SetupTasks, AddTask, DeleteTask };
