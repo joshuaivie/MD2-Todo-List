@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch --mode development",
     "start": "webpack serve --open --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "keywords": [],
   "author": "Joshua Ivie",
@@ -18,8 +19,10 @@
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.25.4",
+    "gh-pages": "^3.2.3",
     "hint": "^6.1.9",
     "html-webpack-plugin": "^5.5.0",
+    "push-dir": "^0.4.1",
     "style-loader": "^3.3.1",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
