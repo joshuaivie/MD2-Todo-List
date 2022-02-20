@@ -5,8 +5,41 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo List</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-  
+  <div class="list-container">
+    <div class="list-header">
+      <h1 class="title">Today's To Do</h1>
+      <button class="refresh" id="refresh">
+        <i class="fa-solid fa-arrows-rotate"></i>
+      </button>
+    </div>
+    <div class="list-input">
+      <input type="text" class="input" id="todo-input" placeholder="Add to your list..." />
+      <button class="enter" id="enter">
+        <i class="fa-solid fa-turn-down-left"></i>
+      </button>
+    </div>
+   
+      <ul class="list">
+        <li class="list-item">
+          <div class="left">
+            <input type="checkbox"/>
+            <p class="description">${
+              todoItem.description
+            }</p>
+          </div>
+          <div class="right">
+            <button class="more-options">
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </button>           
+          </div>
+        </li>
+      </ul>
+    
+    <button class="clear-list-button">Clear all completed</button>
+  </div>
 </body>
 </html>
