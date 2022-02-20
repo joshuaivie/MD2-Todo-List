@@ -1,4 +1,4 @@
-const todoList = [
+const TodoList = [
   {
     index: 0,
     description: 'Setup Application Server Environment',
@@ -26,4 +26,4 @@ const todoList = [
   },
 ]
 
-export default todoList
+export default TodoList

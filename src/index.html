@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo List</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="./index.css">
 </head>
 <body>
   <div class="list-container">
@@ -23,21 +22,7 @@
       </button>
     </div>
    
-      <ul class="list">
-        <li class="list-item">
-          <div class="left">
-            <input type="checkbox"/>
-            <p class="description">${
-              todoItem.description
-            }</p>
-          </div>
-          <div class="right">
-            <button class="more-options">
-              <i class="fa-solid fa-ellipsis-vertical"></i>
-            </button>           
-          </div>
-        </li>
-      </ul>
+      <ul class="list" id="list"></ul>
     
     <button class="clear-list-button">Clear all completed</button>
   </div>
