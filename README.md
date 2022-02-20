@@ -2,7 +2,7 @@
 
 # Todo List
 
-![screenshot]()
+![screenshot](./src/images/screenshot.png)
 
 > This is a demo project that helps to manage a todo list. It explores the use of es6 syntax, Javascript modules and Webpack as a module Bundler.
 
@@ -16,7 +16,7 @@
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://joshuaivie.github.io/MD2-Todo-List/)
 
 ## Getting Started
 
