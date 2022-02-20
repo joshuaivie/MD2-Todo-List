@@ -4,7 +4,7 @@ class TodoHelpers {
     const updatedTasks = existingTasks;
 
     updatedTasks.push({
-      index: id,
+      index: existingTasks.length + 1,
       description: taskDescription,
       completed: false,
       cleared: false,
@@ -20,7 +20,7 @@ class TodoHelpers {
       if (task.index !== taskID) {
         updatedTasks.push({
           ...task,
-          index: updatedTasks.length,
+          index: updatedTasks.length + 1,
         });
       }
     });
@@ -35,6 +35,19 @@ class TodoHelpers {
       updatedTasks.push({
         ...task,
         description: task.index === taskID ? description : task.description,
+      });
+    });
+
+    return updatedTasks;
+  }
+
+  static UpdateTaskState(existingTasks, taskID, taskState) {
+    const updatedTasks = [];
+
+    existingTasks.forEach((task) => {
+      updatedTasks.push({
+        ...task,
+        completed: task.index === taskID ? taskState : task.completed,
       });
     });
 
@@ -61,7 +74,7 @@ class TodoHelpers {
       filteredTasks.forEach((item) => {
         tasksListHTML += `<li class="list-item" id="item-${item.index}">
         <div class="left">
-          <input type="checkbox" ${item.completed ? 'checked' : ''}/>
+          <input id="check-${item.index}" type="checkbox" ${item.completed ? 'checked' : ''}/>
           <p class="description" id="description-${item.index}">${item.description}</p>
         </div>
         <div class="right">
