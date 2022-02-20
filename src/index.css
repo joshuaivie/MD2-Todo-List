@@ -17,6 +17,9 @@ body {
   position: relative;
   font-weight: 400;
   font-size: 1rem;
+  min-width: 100vw;
+  min-height: 100vh;
+  background: #f6f6f6;
 }
 
 button {
@@ -43,6 +46,7 @@ button:active {
   width: 90%;
   border: 1px solid rgb(0 0 0 / 10%);
   max-width: 500px;
+  background: #fff;
 }
 
 .list-header,
@@ -65,6 +69,7 @@ button:active {
   outline: none;
   font-style: italic;
   color: #333;
+  flex-grow: 1;
 }
 
 .list-input .input::placeholder {
@@ -92,6 +97,14 @@ button:active {
   justify-content: space-between;
   padding: 1.5rem;
   border-bottom: 1px solid rgb(0 0 0 / 10%);
+}
+
+.list .list-item .action-button {
+  margin-left: 1.5rem;
+}
+
+.list .list-item .action-button .button-icon {
+  pointer-events: none;
 }
 
 .list .list-item .left,

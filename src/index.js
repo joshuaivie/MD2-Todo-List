@@ -1,4 +1,6 @@
 import './index.css';
-import renderHTMLList from './modules/toDoList.js';
+import { SetupTasks } from './modules/todoManager.js';
+import HandleEvents from './modules/events.js';
 
-renderHTMLList();
+SetupTasks();
+HandleEvents();
