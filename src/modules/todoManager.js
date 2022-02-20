@@ -57,6 +57,24 @@ const CaptureEditableDescription = (id) => {
   });
 };
 
+const CaptureCheck = (id, state) => {
+  const currentTaskList = TodoHelpers.RetrieveTasks();
+  let updatedTaskList = [];
+
+  updatedTaskList = TodoHelpers.UpdateTaskState(currentTaskList, id, state);
+  TodoHelpers.UpdateTaskStore(updatedTaskList);
+  TodoHelpers.RenderTasks(updatedTaskList, TasksContainer);
+};
+
+const ClearAllCompleted = () => {
+  const currentTaskList = TodoHelpers.RetrieveTasks();
+  let updatedTaskList = [];
+
+  updatedTaskList = TodoHelpers.UpdateClearedTasks(currentTaskList);
+  TodoHelpers.UpdateTaskStore(updatedTaskList);
+  TodoHelpers.RenderTasks(updatedTaskList, TasksContainer);
+};
+
 export {
-  SetupTasks, AddTask, DeleteTask, CaptureEditableDescription,
+  SetupTasks, AddTask, DeleteTask, CaptureEditableDescription, CaptureCheck, ClearAllCompleted,
 };
