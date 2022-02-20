@@ -1,3 +1,5 @@
-const ListInnerContainer = document.getElementById('list');
+const TasksContainer = document.getElementById('list');
+const InputBox = document.getElementById('todo-input');
+const ClearCompletedButton = document.getElementById('clear-completed');
 
-export default ListInnerContainer;
+export { TasksContainer, InputBox, ClearCompletedButton };

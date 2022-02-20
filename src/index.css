@@ -94,6 +94,14 @@ button:active {
   border-bottom: 1px solid rgb(0 0 0 / 10%);
 }
 
+.list .list-item .action-button {
+  margin-left: 1.5rem;
+}
+
+.list .list-item .action-button .button-icon {
+  pointer-events: none;
+}
+
 .list .list-item .left,
 .list .list-item .right {
   display: flex;
