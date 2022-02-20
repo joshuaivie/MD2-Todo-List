@@ -1,11 +1,10 @@
 // import './index.css';
-import renderHTMLList from './modules/toDoList.js';
-import AddNewTask from './modules/crud.js';
+import { SetupTasks, AddTask } from './modules/todoManager.js';
 
-renderHTMLList();
+SetupTasks();
 
 document.body.addEventListener('keyup', (event) => {
   if (event.target.id === 'todo-input' && event.key === 'Enter') {
-    AddNewTask(event);
+    AddTask(event);
   }
 });

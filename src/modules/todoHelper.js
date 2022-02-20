@@ -1,5 +1,5 @@
-class TaskHelpers {
-  static CreateBookEntry(existingTasks, taskDescription) {
+class TodoHelpers {
+  static CreateTaskEntry(existingTasks, taskDescription) {
     const id = existingTasks.length === 0 ? 0 : existingTasks.length;
     const updatedTasks = existingTasks;
 
@@ -27,7 +27,7 @@ class TaskHelpers {
   };
 
   static RenderTasks = (tasksList, tasksContainer) => {
-    const filteredTasks = tasksList.filter((task) => task.cleared === true);
+    const filteredTasks = tasksList.filter((task) => task.cleared === false);
     if (filteredTasks.length > 0) {
       let tasksListHTML = '';
       filteredTasks.forEach((item) => {
@@ -44,10 +44,8 @@ class TaskHelpers {
       </li>`;
       });
       tasksContainer.innerHTML = tasksListHTML;
-    } else {
-      tasksContainer.innerHTML = 'You do not have any pending tasks';
     }
   };
 }
 
-export default TaskHelpers;
+export default TodoHelpers;
