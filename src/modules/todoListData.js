@@ -24,6 +24,6 @@ const TodoList = [
     description: 'Configure Server DNS',
     completed: false,
   },
-]
+];
 
-export default TodoList
+export default TodoList;

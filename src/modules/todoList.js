@@ -1,9 +1,9 @@
-import TodoList from "./todoListData.js";
-import ListInnerContainer from "./elements.js";
+import TodoList from './todoListData.js';
+import ListInnerContainer from './elements.js';
 
 const generateHTMLList = (list) => {
-  let htmlList = ''
-  list.forEach((item)=> {
+  let htmlList = '';
+  list.forEach((item) => {
     htmlList += `<li class="list-item" id="item-${item.index}">
     <div class="left">
       <input type="checkbox" ${item.completed ? 'checked' : ''}/>
@@ -14,13 +14,13 @@ const generateHTMLList = (list) => {
         <i class="fa-solid fa-ellipsis-vertical"></i>
       </button>           
     </div>
-  </li>`
-  })
+  </li>`;
+  });
   return htmlList;
 };
 
 const renderHTMLList = () => {
-  ListInnerContainer.innerHTML = generateHTMLList(TodoList)
-}
+  ListInnerContainer.innerHTML = generateHTMLList(TodoList);
+};
 
 export default renderHTMLList;
