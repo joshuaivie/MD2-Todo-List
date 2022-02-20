@@ -1,5 +1,5 @@
 import TodoList from './todoListData.js';
-import ListInnerContainer from './elements.js';
+import { ListInnerContainer } from './elements.js';
 
 const generateHTMLList = (list) => {
   let htmlList = '';
