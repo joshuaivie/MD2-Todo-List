@@ -57,10 +57,11 @@ class TodoHelpers {
     const updatedTasks = [];
 
     existingTasks.forEach((task) => {
-      updatedTasks.push({
-        ...task,
-        cleared: task.completed,
-      });
+      if (task.completed === false) {
+        updatedTasks.push({
+          ...task,
+        });
+      }
     });
 
     return updatedTasks;
